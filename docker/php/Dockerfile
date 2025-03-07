@@ -1,5 +1,5 @@
-# Start with the official PHP 8.2 image
-FROM php:8.4-fpm
+# Start with the official PHP 8.3 image
+FROM php:8.3-fpm
 
 # Install system dependencies and clean cache
 RUN apt-get update && apt-get install -y \

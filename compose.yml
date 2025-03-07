@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
+    container_name: php
     volumes:
       - ./:/var/www
     depends_on:
@@ -11,6 +12,7 @@ services:
 
   postgres:
     image: postgres:17
+    container_name: postgresql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -20,6 +22,7 @@ services:
 
   caddy:
     image: caddy:2-alpine
+    container_name: caddy
     volumes:
       - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./:/var/www
