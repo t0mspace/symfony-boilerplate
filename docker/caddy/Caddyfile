@@ -1,12 +1,11 @@
 {
-    http_port 80
-    https_port 443
+  # Enable automatic TLS (HTTPS)
+  acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
 }
 
-:80 {
-
-    root * /var/www/public
-    file_server
-    php_fastcgi php:9000
-    encode gzip
+localhost {
+  root * /var/www/public
+  file_server
+  php_fastcgi php:9000
+  encode gzip
 }
